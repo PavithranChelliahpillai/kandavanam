@@ -12,6 +12,7 @@
         display: flex; 
         flex-direction: row; 
         margin-top: 2vh; 
+        flex-wrap: wrap; 
     }
     .footer p { 
         flex: 1 1 0px; 
