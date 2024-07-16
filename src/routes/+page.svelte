@@ -150,7 +150,7 @@
         bottom: 12vw; 
         padding-left: 3vw; 
         width: 70%;
-        font-size: 4.75vw;
+        font-size: 9.4vh;
         text-align: left;
         /* font-family: 'Handlee', cursive; */
         /* font-family: 'Patrick Hand SC', cursive; */
