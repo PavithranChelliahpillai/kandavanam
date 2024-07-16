@@ -42,6 +42,7 @@
     <meta name="description" content="Official website of Arulmigu Kanthavanam Kanthasamy Temple, Sri Lanka.">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Pavithran Chelliahpillai">
+    <meta name="robots" content="index,follow">
 </head>
 
 <body>
