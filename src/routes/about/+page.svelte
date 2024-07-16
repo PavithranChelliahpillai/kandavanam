@@ -48,7 +48,7 @@
                     </p>
                 </section>
                 <img
-                        src="http://kanthavanamtemple.com/assets/images/ther18/small2.jpeg"
+                        src="/a1.jpeg"
                         alt=""
                         class="phone"
                     />
@@ -72,7 +72,7 @@
                     </p>
                 </section>
                 <img
-                        src="http://kanthavanamtemple.com/assets/images/sashti/small2.jpg"
+                        src="/a2.jpg"
                         alt=""
                         class="phone"
                     />
@@ -100,7 +100,7 @@
                     </p>
                 </section>
                 <img
-                        src="http://kanthavanamtemple.com/assets/images/big/B1.jpg"
+                        src="/a3.jpg"
                         alt=""
                         class="phone"
                     />
@@ -127,7 +127,7 @@
                     </p>
                 </section>
                 <img
-                        src="http://kanthavanamtemple.com/assets/images/ther/big1%20(41).jpg"
+                        src="/a4.jpg"
                         alt=""
                         class="phone"
                     />
@@ -148,7 +148,7 @@
                     </p>
                 </section>
                 <img
-                        src="http://kanthavanamtemple.com/assets/images/big/B46.jpg"
+                        src="/a5.jpg"
                         alt=""
                         class="phone"
                     />
@@ -173,43 +173,43 @@
             >
                 <Gallery>
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/ther18/small2.jpeg"
+                        src="/a1.jpeg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/sashti/small2.jpg"
+                        src="/a2.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/big/B1.jpg"
+                        src="/a3.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/ther/big1%20(41).jpg"
+                        src="/a4.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/big/B46.jpg"
+                        src="/a5.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/ther18/small2.jpeg"
+                        src="/a1.jpeg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/sashti/small2.jpg"
+                        src="/a2.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/big/B1.jpg"
+                        src="/a3.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/ther/big1%20(41).jpg"
+                        src="/a4.jpg"
                         alt=""
                     />
                     <img
-                        src="http://kanthavanamtemple.com/assets/images/big/B46.jpg"
+                        src="/a5.jpg"
                         alt=""
                     />
                 </Gallery>
