@@ -2,7 +2,7 @@
     <slot />
     <p>info@kanthavanamtemple.com</p>
     <p>© Copyright Kanthavanam Temple</p>
-    <p>Developed by <a href="https://www.linkedin.com/in/pavithran-chelliahpillai-356615217/">Pavithran Chelliahpillai</a></p>
+    <p>Developed by Pavithran Chelliahpillai</p>
 </div>
 
 <style>
