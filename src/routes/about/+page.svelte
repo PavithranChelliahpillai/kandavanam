@@ -301,6 +301,7 @@
             .container { 
                 margin: 1vh 0vw !important; 
                 padding: 1vh 1vw !important; 
+                padding-left: 3vw !important; 
             }
             #bcont {
                 display: inline !important;
