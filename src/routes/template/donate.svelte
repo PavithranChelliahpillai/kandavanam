@@ -67,7 +67,7 @@
             Please send any inquiries about donations, or any general inquiries
             about the temple and future events to:
         </p>
-        <p style="font-size: 3vh;">info@kandavanam.com</p>
+        <p style="font-size: 3vh;">info@kanthavanamtemple.com</p>
     </div>
 </div>
 

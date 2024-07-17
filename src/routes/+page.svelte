@@ -53,7 +53,7 @@
     <div id="phone" style="position: fixed; top: 0; z-index: 500;">
         <Navphone></Navphone>
     </div>
-    <h1 id="bigtitle" style="position: relative; padding-top: 4vh;">
+    <h1 id="bigtitle" style="position: relative; padding-top: 1vh;">
         <span>Arulmigu </span>
         <span>Kanthavanam</span>
         <span>Kanthasamy</span>
@@ -73,7 +73,7 @@
             </p>
         </section>
         <section id="donors">
-            <h2>Donors</h2>
+            <h2 style="padding-bottom: 1vh;">Donors</h2>
             <div style="padding-left: 1vw;">
                 <Marquee direction="up" fade={false} class="[--duration:10s]">
                     {#each donors as donor}
@@ -270,6 +270,7 @@
         flex: none;
         animation: topanim 2s 1s forwards;
         padding-top: 2vh; 
+        margin-top: 2vh; 
     }
 
     #construction {
