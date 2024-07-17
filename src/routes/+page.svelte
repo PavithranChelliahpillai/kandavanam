@@ -53,9 +53,9 @@
     <div id="phone" style="position: fixed; top: 0; z-index: 500;">
         <Navphone></Navphone>
     </div>
-    <h1 id="bigtitle" style="position: relative; padding-bottom: -50vh; ">
+    <h1 id="bigtitle" style="position: relative; padding-top: 4vh;">
         <span>Arulmigu </span>
-        <span>Kandavanam</span>
+        <span>Kanthavanam</span>
         <span>Kanthasamy</span>
         <span>Temple</span>
     </h1>
@@ -151,7 +151,7 @@
         bottom: 12vw; 
         padding-left: 3vw; 
         width: 65%;
-        font-size: 9vh;
+        font-size: 8.5vh;
         text-align: left;
         /* font-family: 'Handlee', cursive; */
         /* font-family: 'Patrick Hand SC', cursive; */

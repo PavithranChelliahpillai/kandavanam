@@ -74,7 +74,7 @@
   <div class="navphone" on:click={() => showDropdown = !showDropdown}>
       <slot />
       <img src="../favicon.png" alt="logo" />
-      <p>Kandavanam Temple</p>
+      <p>Kanthavanam Temple</p>
       <img id="menu" src="../menu.webp" alt="menu">
       {#if showDropdown}
         <div class="dropdown-menu" transition:fly="{{ y: -20, duration: 300 }}">

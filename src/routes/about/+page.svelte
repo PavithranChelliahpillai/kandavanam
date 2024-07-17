@@ -24,7 +24,7 @@
     <div id="phone" style="position: fixed; top: 0; z-index: 500;">
         <Navphone></Navphone>
     </div>
-    <h1 id="titre" style="padding-top: 8vh;">About Us</h1>
+    <h1 id="titre" style="padding-top: 8vh; ">About Us</h1>
     <div id="bcont">
         <div class="flexboxh">
             <div class="flexboxv" id="words">
@@ -274,6 +274,7 @@
         color: #722620;
         background-color: #ffd08e;
         box-sizing: border-box; 
+        padding-left: 1vw; 
     }
     #words {
         width: 60vw;

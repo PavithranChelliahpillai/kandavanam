@@ -1,6 +1,6 @@
 <div class="footer">
     <slot />
-    <p>info@kandavanamtemple.com</p>
+    <p>info@kanthavanamtemple.com</p>
     <p>© Copyright Kanthavanam Temple</p>
     <p>Developed by Pavithran Chelliahpillai</p>
 </div>
