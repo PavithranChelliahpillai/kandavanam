@@ -18,7 +18,7 @@
         flex: 1 1 0px; 
         flex-grow: 1; 
         text-align: center; 
-        padding: 3vh; 
+        padding: 3vh !important; 
     }
     .footer a { 
         color: #FFD08E;

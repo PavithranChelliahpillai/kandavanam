@@ -71,7 +71,7 @@
   
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="navphone" on:click={() => showDropdown = !showDropdown}>
+  <nav class="navphone" on:click={() => showDropdown = !showDropdown}>
       <slot />
       <img src="../favicon.png" alt="logo" />
       <p>Kanthavanam Temple</p>
@@ -84,5 +84,5 @@
           <a href="/donate" id="spec">Donate Today</a>
         </div>
       {/if}
-  </div>
+    </nav>
   

@@ -27,7 +27,7 @@
     </style>
 {/if}
 
-<div class="navbar">
+<nav class="navbar">
     <slot />
     <div id="total">
         <div class="elem" id="home" style="padding: 0; border-left: none;">
@@ -39,7 +39,7 @@
         </div>
         <div class="elem" id="donate"><a href="/donate" style="color: #570100;">Donate Today</a></div>
     </div>
-</div>
+</nav>
 
 <svelte:window bind:scrollY={y} />
 
