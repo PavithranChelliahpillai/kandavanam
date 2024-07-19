@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Origin and information about the temple and murthigal (idols).">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="keywords" content="Kandavanam, Kanthavanam, Kanthasamy, Temple, Sri Lanka, Polikandy">
     <meta name="author" content="Pavithran Chelliahpillai">
     <meta name="robots" content="index,follow">
 </head>
