@@ -7,7 +7,7 @@
     import Footer from "../template/footer.svelte"
 </script>
 
-<head>
+<svelte:head>
     <title>About Us</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
     <meta name="keywords" content="Kandavanam, Kanthavanam, Kanthasamy, Temple, Sri Lanka, Polikandy">
     <meta name="author" content="Pavithran Chelliahpillai">
     <meta name="robots" content="index,follow">
-</head>
+</svelte:head>
 
 <body>
     <div id="phonebye" style="position: fixed; top: 0; z-index: 500;">
@@ -49,7 +49,7 @@
                     </p>
                 </section>
                 <img
-                        src="/a1.jpeg"
+                        src="/a1.webp"
                         alt=""
                         class="phone"
                     />
@@ -73,7 +73,7 @@
                     </p>
                 </section>
                 <img
-                        src="/a2.jpg"
+                        src="/a2.webp"
                         alt=""
                         class="phone"
                     />
@@ -101,7 +101,7 @@
                     </p>
                 </section>
                 <img
-                        src="/a3.jpg"
+                        src="/a3.webp"
                         alt=""
                         class="phone"
                     />
@@ -128,7 +128,7 @@
                     </p>
                 </section>
                 <img
-                        src="/a4.jpg"
+                        src="/a4.webp"
                         alt=""
                         class="phone"
                     />
@@ -149,7 +149,7 @@
                     </p>
                 </section>
                 <img
-                        src="/a5.jpg"
+                        src="/a5.webp"
                         alt=""
                         class="phone"
                     />
@@ -174,43 +174,43 @@
             >
                 <Gallery>
                     <img
-                        src="/a1.jpeg"
+                        src="/a1.webp"
                         alt=""
                     />
                     <img
-                        src="/a2.jpg"
+                        src="/a2.webp"
                         alt=""
                     />
                     <img
-                        src="/a3.jpg"
+                        src="/a3.webp"
                         alt=""
                     />
                     <img
-                        src="/a4.jpg"
+                        src="/a4.webp"
                         alt=""
                     />
                     <img
-                        src="/a5.jpg"
+                        src="/a5.webp"
                         alt=""
                     />
                     <img
-                        src="/a1.jpeg"
+                        src="/a1.webp"
                         alt=""
                     />
                     <img
-                        src="/a2.jpg"
+                        src="/a2.webp"
                         alt=""
                     />
                     <img
-                        src="/a3.jpg"
+                        src="/a3.webp"
                         alt=""
                     />
                     <img
-                        src="/a4.jpg"
+                        src="/a4.webp"
                         alt=""
                     />
                     <img
-                        src="/a5.jpg"
+                        src="/a5.webp"
                         alt=""
                     />
                 </Gallery>

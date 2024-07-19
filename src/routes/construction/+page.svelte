@@ -14,7 +14,7 @@
     ];
 </script>
 
-<head>
+<svelte:head>
     <title>Kanthavanam Temple</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
     <meta name="keywords" content="Kandavanam, Kanthavanam, Kanthasamy, Temple, Sri Lanka, Polikandy">
     <meta name="author" content="Pavithran Chelliahpillai" />
     <meta name="robots" content="index,follow">
-</head>
+</svelte:head>
 
 <body>
     <div id="phonebye" style="position: fixed; top: 0; z-index: 500;">
@@ -37,7 +37,7 @@
     <h1 style="padding: 2vh 0vw; padding-left: 1vw;" id="title">
         Temple Construction
     </h1>
-    <img id="temple" src="../temple.png" alt="" />
+    <img id="temple" src="../temple.webp" alt="" />
     <div class="flexbox">
         <div class="flexchild" style="padding-left: 5vw;">
             <h1 style="width: 80%;">
@@ -67,49 +67,49 @@
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p1.JPG"
+                                src="\p1.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p3.JPG"
+                                src="\p3.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p4.JPG"
+                                src="\p4.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p5.JPG"
+                                src="\p5.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p7.JPG"
+                                src="\p7.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p8.JPG"
+                                src="\p8.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p9.JPG"
+                                src="\p9.webp"
                                 alt="about us"
                             />
                         </div>
@@ -137,49 +137,49 @@
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p10.jpg"
+                                src="\p10.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p11.jpg"
+                                src="\p11.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p12.jpg"
+                                src="\p12.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p13.jpg"
+                                src="\p13.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p14.jpg"
+                                src="\p14.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p15.jpg"
+                                src="\p15.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\p16.jpg"
+                                src="\p16.webp"
                                 alt="about us"
                             />
                         </div>
@@ -225,49 +225,49 @@
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\e1.jpg"
+                                src="\e1.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\e2.jpg"
+                                src="\e2.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\e3.jpg"
+                                src="\e3.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\e4.jpg"
+                                src="\e4.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\i1.jpg"
+                                src="\i1.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\i2.jpg"
+                                src="\i2.webp"
                                 alt="about us"
                             />
                         </div>
                         <div class="embla__slide">
                             <img
                                 style="width: 100%; height: 100%"
-                                src="\i3.jpg"
+                                src="\i3.webp"
                                 alt="about us"
                             />
                         </div>

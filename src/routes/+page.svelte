@@ -35,7 +35,7 @@
     ]
 </script>
 
-<head>
+<svelte:head>
     <title>Kanthavanam Temple</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,10 +43,10 @@
     <meta name="keywords" content="Kandavanam, Kanthavanam, Kanthasamy, Temple, Sri Lanka, Polikandy">
     <meta name="author" content="Pavithran Chelliahpillai">
     <meta name="robots" content="index,follow">
-</head>
+</svelte:head>
 
 <body>
-    <img src="\muruganfrontimg.png" id="murugan" alt="murugan" />
+    <img src="\muruganfrontimg.webp" id="murugan" alt="murugan" />
     <div id="phonebye" style="position: fixed; top: 0; z-index: 500;">
         <Navbar></Navbar>
     </div>
