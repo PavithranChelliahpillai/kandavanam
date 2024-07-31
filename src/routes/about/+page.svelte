@@ -1,7 +1,6 @@
 <script>
     import Navbar from "../template/nav.svelte";
     import Navphone from "../template/navphone.svelte";
-    // @ts-ignore
     import Gallery from "svelte-image-gallery";
     import MediaQuery from "../MediaQuery.svelte";
     import Footer from "../template/footer.svelte"
