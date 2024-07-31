@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: 
-Sitemap: https://kanthavanamtemple.com/sitemap.xml
