@@ -5,13 +5,52 @@
     import Autoplay from "embla-carousel-autoplay";
     import MediaQuery from "../MediaQuery.svelte";
     import Footer from "../template/footer.svelte";
+    import { fade } from 'svelte/transition';
 
     let options = { loop: true };
     let plugins = [
         Autoplay({ delay: 3000, stopOnInteraction: false }),
+        Autoplay({ delay: 3000, stopOnInteraction: true }),
         Autoplay({ delay: 3000, stopOnInteraction: false }),
         Autoplay({ delay: 3000, stopOnInteraction: false }),
     ];
+
+    let vidShowIndex = 0;
+    const videos = [
+        {idx: 0, link: '/videos/vid02.mp4'},
+        {idx: 1, link: '/videos/vid01.mp4'},
+        {idx: 2, link: '/videos/VIDEO-2024-02-11-04-13-26.mp4'},
+        {idx: 3, link: '/videos/vid03.mp4'},
+        {idx: 4, link: '/videos/vid04.mp4'},
+        {idx: 5, link: '/videos/vid05.mp4'},
+        {idx: 6, link: '/videos/vid06.mp4'},
+        {idx: 7, link: '/videos/vid07.mp4'},
+        {idx: 8, link: '/videos/vid08.mp4'},
+        {idx: 9, link: '/videos/vid09.mp4'},
+        {idx: 10, link: '/videos/vid10.mp4'},
+        {idx: 11, link: '/videos/vid11.mp4'},
+        {idx: 12, link: '/videos/vid12.mp4'},
+        {idx: 13, link: '/videos/vid13.mp4'},
+        {idx: 14, link: '/videos/vid14.mp4'},
+    ];
+
+    const prevSlide = () => {
+        if(vidShowIndex === 0) {
+            vidShowIndex = videos.length-1;
+        } else {
+            vidShowIndex -= 1;
+        }
+        console.log(vidShowIndex);
+    };
+
+    const nextSlide = () => {
+        if(vidShowIndex === videos.length-1) {
+            vidShowIndex = 0;
+        } else {
+            vidShowIndex += 1;
+        }
+        console.log(vidShowIndex);
+    };
 </script>
 
 <svelte:head>
@@ -118,6 +157,26 @@
             </div>
         </div>
     </div>
+    <div class="flexbox">
+        <div class="flexchild video-wrapper">
+                {#each videos as {idx,link}
+                    (idx)
+                }
+                    {#if vidShowIndex === idx}
+                        <div class="video-container" style="z-index: 20" transition:fade>
+                            <video
+                                controls
+                                autoplay
+                            >
+                                <source src={link} type="video/mp4" />
+                            </video>
+                        </div>
+                    {/if}
+                {/each}
+                <a class="prev" on:click={prevSlide}>&#10094;</a>
+                <a class="next" on:click={nextSlide}>&#10095;</a>
+        </div>
+    </div>
     <div class="flexbox" id="invert">
         <div
             class="flexchild"
@@ -131,7 +190,7 @@
             >
                 <div
                     class="embla"
-                    use:emblaCarouselSvelte={{ options, plugins: [plugins[1]] }}
+                    use:emblaCarouselSvelte={{ options, plugins: [plugins[2]] }}
                 >
                     <div class="embla__container">
                         <div class="embla__slide">
@@ -397,6 +456,59 @@
     }
     .embla__slide img {
         object-fit: cover;
+    }
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 65%;
+        height: 60vh;
+        padding-top: 0;
+        margin: 5vh auto;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    video {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    .video-container {
+        position: absolute;
+        background: black;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        transform: translateY(-50%);
+        z-index:20;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .prev {
+        left: 0.2rem;
+    }
+    .next {
+        right: 0.2rem;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
     }
     #phone {
         display: none;
