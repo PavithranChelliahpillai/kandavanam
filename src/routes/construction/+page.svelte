@@ -351,6 +351,10 @@
                 align-items: center;
             }
             .video-wrapper.flexchild {
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
                 margin: 5vh 0 !important;
                 max-width: 100%;
                 height: auto;
@@ -516,8 +520,5 @@
     }
     #phone {
         display: none;
-    }
-    img {
-        max-width: 1000vw !important;
     }
 </style>
