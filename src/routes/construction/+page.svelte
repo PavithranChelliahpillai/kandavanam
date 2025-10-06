@@ -342,24 +342,22 @@
 <MediaQuery query="(max-width: 1280px)" let:matches>
     {#if matches}
         <style>
-            .video-wrapper {
-                max-width: 95%;
-                height: auto;
-                margin: 5vh auto !important;
-            }
             .flexbox {
                 display: block !important;
             }
             .flexchild {
                 padding: 0 !important;
                 margin: 0 !important;
+                align-items: center;
+            }
+            .video-wrapper.flexchild {
+                margin: 5vh auto !important;
+                max-width: 95%;
+                height: auto;
             }
             #invert {
                 display: flex !important;
                 flex-direction: column-reverse !important;
-            }
-            .flexchild {
-                align-items: center;
             }
             .flexchild h1 {
                 text-align: center;
