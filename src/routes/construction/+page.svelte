@@ -383,9 +383,7 @@
                 font-size: 7vh !important;
             }
             #temple {
-                position: relative;
-                width: 200%;
-                left: -20% !important;
+                width: 100%;
             }
             #phone {
                 display: flex !important;
