@@ -341,6 +341,10 @@
 <MediaQuery query="(max-width: 1280px)" let:matches>
     {#if matches}
         <style>
+            .video-wrapper {
+                max-width: 95%;
+                height: auto;
+            }
             .flexbox {
                 display: block !important;
             }
