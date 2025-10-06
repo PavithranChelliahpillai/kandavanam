@@ -167,6 +167,7 @@
                             <video
                                 controls
                                 autoplay
+                                playsinline
                             >
                                 <source src={link} type="video/mp4" />
                             </video>
@@ -344,6 +345,7 @@
             .video-wrapper {
                 max-width: 95%;
                 height: auto;
+                margin: 5vh auto !important;
             }
             .flexbox {
                 display: block !important;
