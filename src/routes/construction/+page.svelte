@@ -351,8 +351,8 @@
                 align-items: center;
             }
             .video-wrapper.flexchild {
-                margin: 5vh auto !important;
-                max-width: 95%;
+                margin: 5vh 0 !important;
+                max-width: 100%;
                 height: auto;
             }
             #invert {
