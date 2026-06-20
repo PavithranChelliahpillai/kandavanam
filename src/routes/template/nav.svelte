@@ -8,6 +8,10 @@
     import { onMount } from "svelte";
     let ready = false;
     onMount(() => (ready = true));
+
+    // When true, the bar sits above the right-hand panel column instead of
+    // spanning the full width (used on the home page).
+    export let rightAligned = false;
 </script>
 
 {#if y > 0}
@@ -29,7 +33,7 @@
 
 <nav class="navbar">
     <slot />
-    <div id="total">
+    <div id="total" class:right={rightAligned}>
         <div class="elem" id="home" style="padding: 0; border-left: none;">
             <a href="/">Home</a>
         </div>
@@ -64,44 +68,68 @@
         display: relative;
         z-index: 500;
     }
+    /* Rounded translucent panel — shared by every nav bar */
     #total {
         display: flex;
         flex-direction: row;
         margin: 0;
-        padding: 0;
         list-style-type: none;
         position: fixed;
         width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 208, 142, 0.35);
+        border-top: none;
+        border-radius: 0 0 18px 18px;
+        background: rgba(87, 1, 0, 0.55);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        padding: 0.5vh 0.6vw;
+        gap: 0.4vw;
+    }
+    /* Home page: anchor the bar above the right-hand panel column */
+    #total.right {
+        left: 65%;
+        width: 30%;
     }
     .elem {
-        float: left;
-        border: 1px solid #ffd08e;
-        border-right: 0;
         position: relative;
         flex: 1 1 0px;
-        transition: all 0.5s;
-        padding: 0vh 0vw; 
+        display: flex;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: background 0.3s ease;
     }
     a {
         text-decoration: none;
         color: #ffd08e;
-        padding-left: 1vw;
+        font-family: "Noto Serif", serif;
+        font-size: 2.1vh;
+        letter-spacing: 0.02em;
+        line-height: 1.25;
+        text-align: center;
+        width: 100%;
         display: flex;
-        padding-top: 2.5vh !important;
-        padding-bottom: 2.5vh !important;
+        justify-content: center;
         align-items: center;
+        padding: 2.2vh 0.4vw;
     }
-    .elem:hover {
-        background: #25010096;
+    /* Home page bar is narrower, keep its links a touch tighter */
+    #total.right a {
+        padding: 1.4vh 0.4vw;
+        font-size: 1.7vh;
     }
-    #home {
-        flex-grow: 2;
+    .elem:not(#donate):hover {
+        background: rgba(255, 208, 142, 0.14);
     }
     #donate {
         background: #ffd08e;
-        flex-grow: 2; 
+        border-radius: 12px;
     }
-    #donate:hover { 
+    #donate a {
+        font-weight: 700;
+    }
+    #donate:hover {
         background: #be9254;
     }
 </style>

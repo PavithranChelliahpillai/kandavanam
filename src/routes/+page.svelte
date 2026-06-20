@@ -121,7 +121,7 @@
 <body>
     <img src="\muruganfrontimg.webp" id="murugan" alt="murugan" />
     <div id="phonebye" style="position: fixed; top: 0; z-index: 500;">
-        <Navbar></Navbar>
+        <Navbar rightAligned />
     </div>
     <div id="phone" style="position: fixed; top: 0; z-index: 500;">
         <Navphone></Navphone>
@@ -221,23 +221,28 @@
     #bigtitle {
         z-index: 1;
         position: relative; 
-        bottom: 12vw; 
+        bottom: 15vw; 
         padding-left: 3vw; 
+        padding-top: 4vh;
+        padding-bottom: 30vh;
+        margin-bottom: -30vh;
         width: 65%;
         font-size: 8.5vh;
         text-align: left;
         /* font-family: 'Handlee', cursive; */
         /* font-family: 'Patrick Hand SC', cursive; */
         font-family: "Noto Serif", serif;
-        transform: scale(0.94);
-        animation: scale 5s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        background: linear-gradient(
+            to bottom,
+            rgba(87, 1, 0, 0) 0,
+            rgba(87, 1, 0, 1) 14vh
+        );
         /* animation-delay: 1.5s; animation: bgfill 0.5s forwards;  */
     }
 
     @keyframes scale {
         100% {
             transform: scale(1);
-            background-color: rgba(87, 1, 0, 0.75);
         }
     }
 
@@ -523,6 +528,18 @@
         display: none; 
     }
 </style>
+
+<MediaQuery query="(min-width: 1281px)" let:matches>
+    {#if matches}
+        <style>
+            html,
+            body {
+                overflow: hidden !important;
+                height: 100vh;
+            }
+        </style>
+    {/if}
+</MediaQuery>
 
 <MediaQuery query="(max-width: 1280px)" let:matches>
     {#if matches}
