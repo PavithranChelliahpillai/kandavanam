@@ -60,8 +60,8 @@
             construction efforts.
         </p>
         <p style="font-size: 3vh;">Contact for Donation:</p>
-        <p style="font-size: 3vh;">Mobile: 0775002162</p>
-        <p style="font-size: 3vh; margin-bottom: 5vh;">Mobile: 0770873177</p>
+        <p style="font-size: 3vh;">WhatsApp: +94 77-500-2162</p>
+        <p style="font-size: 3vh; margin-bottom: 5vh;">Mobile: +1 647-880-1416</p>
         <h1>Inquiries</h1>
         <p style="font-size: 2vh;">
             Please send any inquiries about donations, or any general inquiries
