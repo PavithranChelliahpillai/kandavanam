@@ -9,12 +9,29 @@
     // automatically alternate based on position, so just add an entry here.
     const sections = [
         {
-            title: "Lorem Ipsum",
+            title: "The Temple Construction Committee",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
-                "do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco " +
-                "laboris nisi ut aliquip ex ea commodo consequat.",
+                "In order to support the construction of our new temple, the " +
+                "Thiruppani Seyal (Construction Works) Committee has been " +
+                "established. This committee was created with the sole purpose " +
+                "of making the temple restoration project a reality and will be " +
+                "actively working towards this goal. We encourage all devotees " +
+                "to get involved in the project. If you would like to contribute, " +
+                "donations can be made out to Hatton National Bank (Nelliady), " +
+                "Acct. 118020318297. Please also feel free to contact 021-226-6664 " +
+                "for more information.",
+            slides: [
+                "/videos/VIDEO-2026-06-21-18-39-02.mp4",
+                "/PHOTO-2026-06-21-18-40-16.jpg",
+            ],
+
+        },
+        {
+            title: "Construction Begins",
+            description:
+                "We are honoured to begin construction of a new temple. Please " +
+                "enjoy videos and images of the process as well as milestones " +
+                "of the construction process which are outlined below.", 
             slides: [
                 "/videos/vid02.mp4",
                 "/videos/vid01.mp4",
@@ -54,6 +71,36 @@
             ],
         },
         {
+            title: "Construction of Ganapathi Sannithanam",
+            description:
+                "We have recently begun work on the Ganapathi sannithanam. " +
+                "The site has been consecrated, and work on the foundation " +
+                "is currently underway.",
+            slides: [
+                "/videos/VIDEO-2026-06-21-18-52-17.mp4",
+                "/videos/VIDEO-2026-06-21-18-52-32.mp4",
+                "/videos/VIDEO-2026-06-21-18-53-14.mp4",
+                "/PHOTO-2026-06-21-18-50-18.jpg",
+                "/PHOTO-2026-06-21-18-50-19.jpg",
+                "/PHOTO-2026-06-21-18-50-20.jpg",
+                "/PHOTO-2026-06-21-18-50-21.jpg",
+                "/PHOTO-2026-06-21-18-50-22_1.jpg",
+                "/PHOTO-2026-06-21-18-50-22_2.jpg",
+                "/PHOTO-2026-06-21-18-50-22_3.jpg",
+                "/PHOTO-2026-06-21-18-50-22_4.jpg",
+                "/PHOTO-2026-06-21-18-50-22_5.jpg",
+                "/PHOTO-2026-06-21-18-50-22_6.jpg",
+                "/PHOTO-2026-06-21-18-50-22.jpg",
+                "/PHOTO-2026-06-21-18-50-23_1.jpg",
+                "/PHOTO-2026-06-21-18-50-23_2.jpg",
+                "/PHOTO-2026-06-21-18-50-23.jpg",
+                "/PHOTO-2026-06-21-18-51-09.jpg",
+                "/PHOTO-2026-06-21-18-51-48.jpg",
+                "/PHOTO-2026-06-21-18-51-58.jpg",
+                "/PHOTO-2026-06-21-18-52-40.jpg",
+            ],
+        },
+        {
             title: "West Side of Temple",
             description:
                 "The west side of the temple is where the preparations of " +
@@ -89,6 +136,24 @@
                 "/i1.webp",
                 "/i2.webp",
                 "/i3.webp",
+            ],
+        },
+        {
+            title: "Other Notable Events",
+            description:
+                "In memory of the late Mr. Satchithanantham, a daily annadhanam " +
+                "has been started by Mr. Satchithananthan Tilak on behalf of his " +
+                "family. The offerings are distributed to devotees daily in the " +
+                "Ganapathipillai Aashram on the western road.",
+            slides: [
+                "/PHOTO-2026-06-21-18-58-48.jpg",
+                "/videos/VIDEO-2026-06-21-19-00-47.mp4",
+                "/PHOTO-2026-06-21-19-00-38_1.jpg",
+                "/PHOTO-2026-06-21-19-00-38_3.jpg",
+                "/PHOTO-2026-06-21-19-00-38_4.jpg",
+                "/PHOTO-2026-06-21-19-00-38_5.jpg",
+                "/PHOTO-2026-06-21-19-01-09.jpg",
+                "/PHOTO-2026-06-21-19-01-36.jpg",
             ],
         },
     ];
