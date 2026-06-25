@@ -52,18 +52,12 @@
     * {
         box-sizing: border-box;
     }
-    /* body {
-        min-height: 100%; 
-        position: relative;
-    } */
-    .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        /* Additional footer styles */
-    }
     body { 
         background-color: #570100;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
     div { 
         padding: 0; 
@@ -73,6 +67,6 @@
         display: none; 
     }
     #cont { 
-        min-height: 81vh; 
+        flex: 1 0 auto; 
     }
 </style>

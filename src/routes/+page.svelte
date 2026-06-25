@@ -8,6 +8,22 @@
     import MediaQuery from "./MediaQuery.svelte";
 
     let donors = [
+        "ரஞ்சன் செல்லையாபிள்ளை யோகேந்திரன்ஆதீனகர்த்தா -கனடா Rs.500100.00",
+        "கல்யாணவேலவசுவாமிஅன்னதானசபை பொலிகண்டி- Rs.500000.00",
+        "ரமேஷ் யோகேந்திரன் -ஆதீனகர்த்தா - கனடா -Rs.500000.00",
+        "சுப்பிரமணியம் அருந்தவராசா-பொலிகண்டி Rs.100000.00",
+        "இராமலிங்கம் இராஜேஸ்வரி-லண்டன்-Rs.100000.00",
+        "சுதர்சன் பாமிலாகுடும்பம் -வதிரி- Rs.100000.00",
+        "S.நிறஞ்சன் -லண்டன்-Rs.100000.00",
+        "பொலிகண்டிசிவப்பிரகாசம் பரமேஸ்வரி ஞாபகார்த்தமாக- Rs10000.00",
+        "குருசாந்தமூர்த்தி விஜயராஜ்- வல்வெட்டித்துறை-Rs.10000.00",
+        "K.தர்மரட்னம்- வல்வெட்டித்துறை-Rs.10000.00",
+        "சீவரத்தினம் தேவகி-கனடா-Rs.25000.00",
+        "நளேந்திரன் செல்வராணி பொலிகண்டி- Rs.5000.00",
+        "கிருஸ்ணபிள்ளை யோகராசா துவாரகா பொலிகண்டி-Rs.5000.00",
+        "தாமோதரம்பிள்ளை முருகதாஸ்- பொலிகண்டி-Rs.5000.00",
+        "சிவகுமார் சுமதிகுடும்பம்-உடுப்பிட்டி-Rs.1000.00",
+        "பொலிகண்டியைச்சேர்ந்த அமரர்களான செல்லப்பாசின்னையா,சின்னையா செல்வமலர்,சின்னையா மணிவண்ணன் ஆகியோரது நினைவாக அன்னார்களது குடும்பத்தினர் ஒரு இந்தியவேலையாளின் பொறுப்பை ஒருவருடத்திற்கு ஏற்றுள்ளனர் இவர்களனைவர்களிற்கும் கந்தவனநாதரின் ஆசி கிடைக்க பிரார்த்திக்கின்றோம்",
         "செல்வி.நவரட்ணம் சசிகலா Rs.3500000",
         "திருமதி.நவரட்ணம் இராசமலர் Rs.1000000",
         "க.திலகவதி, உ.விஜியராணி Rs.1000000",
@@ -121,7 +137,7 @@
 <body>
     <img src="\muruganfrontimg.webp" id="murugan" alt="murugan" />
     <div id="phonebye" style="position: fixed; top: 0; z-index: 500;">
-        <Navbar></Navbar>
+        <Navbar rightAligned />
     </div>
     <div id="phone" style="position: fixed; top: 0; z-index: 500;">
         <Navphone></Navphone>
@@ -221,23 +237,28 @@
     #bigtitle {
         z-index: 1;
         position: relative; 
-        bottom: 12vw; 
+        bottom: 15vw; 
         padding-left: 3vw; 
+        padding-top: 4vh;
+        padding-bottom: 30vh;
+        margin-bottom: -30vh;
         width: 65%;
         font-size: 8.5vh;
         text-align: left;
         /* font-family: 'Handlee', cursive; */
         /* font-family: 'Patrick Hand SC', cursive; */
         font-family: "Noto Serif", serif;
-        transform: scale(0.94);
-        animation: scale 5s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        background: linear-gradient(
+            to bottom,
+            rgba(87, 1, 0, 0) 0,
+            rgba(87, 1, 0, 1) 14vh
+        );
         /* animation-delay: 1.5s; animation: bgfill 0.5s forwards;  */
     }
 
     @keyframes scale {
         100% {
             transform: scale(1);
-            background-color: rgba(87, 1, 0, 0.75);
         }
     }
 
@@ -523,6 +544,18 @@
         display: none; 
     }
 </style>
+
+<MediaQuery query="(min-width: 1281px)" let:matches>
+    {#if matches}
+        <style>
+            html,
+            body {
+                overflow: hidden !important;
+                height: 100vh;
+            }
+        </style>
+    {/if}
+</MediaQuery>
 
 <MediaQuery query="(max-width: 1280px)" let:matches>
     {#if matches}

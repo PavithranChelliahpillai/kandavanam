@@ -1,56 +1,162 @@
 <script>
     import Navbar from "../template/nav.svelte";
     import Navphone from "../template/navphone.svelte";
-    import emblaCarouselSvelte from "embla-carousel-svelte";
-    import Autoplay from "embla-carousel-autoplay";
     import MediaQuery from "../MediaQuery.svelte";
     import Footer from "../template/footer.svelte";
-    import { fade } from 'svelte/transition';
+    import CarouselSection from "./CarouselSection.svelte";
 
-    let options = { loop: true };
-    let plugins = [
-        Autoplay({ delay: 3000, stopOnInteraction: false }),
-        Autoplay({ delay: 3000, stopOnInteraction: true }),
-        Autoplay({ delay: 3000, stopOnInteraction: false }),
-        Autoplay({ delay: 3000, stopOnInteraction: false }),
+    // Sections render top-to-bottom in this order. The carousel/text sides
+    // automatically alternate based on position, so just add an entry here.
+    const sections = [
+        {
+            title: "The Temple Construction Committee",
+            description:
+                "In order to support the construction of our new temple, the " +
+                "Thiruppani Seyal (Construction Works) Committee has been " +
+                "established. This committee was created with the sole purpose " +
+                "of making the temple restoration project a reality and will be " +
+                "actively working towards this goal. We encourage all devotees " +
+                "to get involved in the project. If you would like to contribute, " +
+                "donations can be made out to Hatton National Bank (Nelliady), " +
+                "Acct. 118020318297. Please also feel free to contact 021-226-6664 " +
+                "for more information.",
+            slides: [
+                "/videos/VIDEO-2026-06-21-18-39-02.webm",
+                "/PHOTO-2026-06-21-18-40-16.webp",
+            ],
+
+        },
+        {
+            title: "Construction Begins",
+            description:
+                "We are honoured to begin construction of a new temple. Please " +
+                "enjoy videos and images of the process as well as milestones " +
+                "of the construction process which are outlined below.", 
+            slides: [
+                "/videos/vid02.webm",
+                "/videos/vid01.webm",
+                "/videos/VIDEO-2024-02-11-04-13-26.webm",
+                "/videos/vid03.webm",
+                "/videos/vid04.webm",
+                "/videos/vid05.webm",
+                "/videos/vid06.webm",
+                "/videos/vid07.webm",
+                "/videos/vid08.webm",
+                "/videos/vid09.webm",
+                "/videos/vid10.webm",
+                "/videos/vid11.webm",
+                "/videos/vid12.webm",
+                "/videos/vid13.webm",
+                "/videos/vid14.webm",
+            ],
+        },
+        {
+            title: "Construction of Sanctum Sanctorum (மூலஸ்தானம்)",
+            description:
+                'The mulasthanam, or the "main sanctum" is the new, permanent ' +
+                "home of the main idol: Shanmukar. Currently, progress is being " +
+                "made in the construction of the karpagraham, arthamandapam, " +
+                "mahamandapam, etc. The first stone was inaugurated on Jan 21st, " +
+                "2019 commencing the construction of the mulasthanam. Thus, the " +
+                "base is fully prepared for complete construction of the " +
+                "mulasthanam with granite stones.",
+            slides: [
+                "/p1.webp",
+                "/p3.webp",
+                "/p4.webp",
+                "/p5.webp",
+                "/p7.webp",
+                "/p8.webp",
+                "/p9.webp",
+            ],
+        },
+        {
+            title: "Construction of Ganapathi Sannithanam",
+            description:
+                "We have recently begun work on the Ganapathi sannithanam. " +
+                "The site has been consecrated, and work on the foundation " +
+                "is currently underway.",
+            slides: [
+                "/videos/VIDEO-2026-06-21-18-52-17.webm",
+                "/videos/VIDEO-2026-06-21-18-52-32.webm",
+                "/videos/VIDEO-2026-06-21-18-53-14.webm",
+                "/PHOTO-2026-06-21-18-50-18.webp",
+                "/PHOTO-2026-06-21-18-50-19.webp",
+                "/PHOTO-2026-06-21-18-50-20.webp",
+                "/PHOTO-2026-06-21-18-50-21.webp",
+                "/PHOTO-2026-06-21-18-50-22_1.webp",
+                "/PHOTO-2026-06-21-18-50-22_2.webp",
+                "/PHOTO-2026-06-21-18-50-22_3.webp",
+                "/PHOTO-2026-06-21-18-50-22_4.webp",
+                "/PHOTO-2026-06-21-18-50-22_5.webp",
+                "/PHOTO-2026-06-21-18-50-22_6.webp",
+                "/PHOTO-2026-06-21-18-50-22.webp",
+                "/PHOTO-2026-06-21-18-50-23_1.webp",
+                "/PHOTO-2026-06-21-18-50-23_2.webp",
+                "/PHOTO-2026-06-21-18-50-23.webp",
+                "/PHOTO-2026-06-21-18-51-09.webp",
+                "/PHOTO-2026-06-21-18-51-48.webp",
+                "/PHOTO-2026-06-21-18-51-58.webp",
+                "/PHOTO-2026-06-21-18-52-40.webp",
+            ],
+        },
+        {
+            title: "West Side of Temple",
+            description:
+                "The west side of the temple is where the preparations of " +
+                "stonework for the temple occurs. This includes carving, " +
+                "designing, and the intricate shaping of decorative granite " +
+                'pieces. Through the guidance from the "sthapathi" (architects), ' +
+                "led by Mr. V. Karthik, the temple is being constructed in a " +
+                'manner that honours the "shilpa shastra", a timeless detailing ' +
+                "of Hindu temple construction.",
+            slides: [
+                "/p10.webp",
+                "/p11.webp",
+                "/p12.webp",
+                "/p13.webp",
+                "/p14.webp",
+                "/p15.webp",
+                "/p16.webp",
+            ],
+        },
+        {
+            title: "Temple Vision",
+            description:
+                "The grand temple is a large undertaking to build a permanent " +
+                "home for Shankmukar that stands the test of time. Currently, our " +
+                "focus lies on the mulasthanam, but our ultimate goal is to " +
+                "complete similar grand constructions for the parivara murthis. " +
+                "The mandapams will be completed, followed by the rajagopuram.",
+            slides: [
+                "/e1.webp",
+                "/e2.webp",
+                "/e3.webp",
+                "/e4.webp",
+                "/i1.webp",
+                "/i2.webp",
+                "/i3.webp",
+            ],
+        },
+        {
+            title: "Other Notable Events",
+            description:
+                "In memory of the late Mr. Satchithanantham, a daily annadhanam " +
+                "has been started by Mr. Satchithananthan Tilak on behalf of his " +
+                "family. The offerings are distributed to devotees daily in the " +
+                "Ganapathipillai Aashram on the western road.",
+            slides: [
+                "/PHOTO-2026-06-21-18-58-48.webp",
+                "/videos/VIDEO-2026-06-21-19-00-47.webm",
+                "/PHOTO-2026-06-21-19-00-38_1.webp",
+                "/PHOTO-2026-06-21-19-00-38_3.webp",
+                "/PHOTO-2026-06-21-19-00-38_4.webp",
+                "/PHOTO-2026-06-21-19-00-38_5.webp",
+                "/PHOTO-2026-06-21-19-01-09.webp",
+                "/PHOTO-2026-06-21-19-01-36.webp",
+            ],
+        },
     ];
-
-    let vidShowIndex = 0;
-    const videos = [
-        {idx: 0, link: '/videos/vid02.mp4'},
-        {idx: 1, link: '/videos/vid01.mp4'},
-        {idx: 2, link: '/videos/VIDEO-2024-02-11-04-13-26.mp4'},
-        {idx: 3, link: '/videos/vid03.mp4'},
-        {idx: 4, link: '/videos/vid04.mp4'},
-        {idx: 5, link: '/videos/vid05.mp4'},
-        {idx: 6, link: '/videos/vid06.mp4'},
-        {idx: 7, link: '/videos/vid07.mp4'},
-        {idx: 8, link: '/videos/vid08.mp4'},
-        {idx: 9, link: '/videos/vid09.mp4'},
-        {idx: 10, link: '/videos/vid10.mp4'},
-        {idx: 11, link: '/videos/vid11.mp4'},
-        {idx: 12, link: '/videos/vid12.mp4'},
-        {idx: 13, link: '/videos/vid13.mp4'},
-        {idx: 14, link: '/videos/vid14.mp4'},
-    ];
-
-    const prevSlide = () => {
-        if(vidShowIndex === 0) {
-            vidShowIndex = videos.length-1;
-        } else {
-            vidShowIndex -= 1;
-        }
-        console.log(vidShowIndex);
-    };
-
-    const nextSlide = () => {
-        if(vidShowIndex === videos.length-1) {
-            vidShowIndex = 0;
-        } else {
-            vidShowIndex += 1;
-        }
-        console.log(vidShowIndex);
-    };
 </script>
 
 <svelte:head>
@@ -77,308 +183,15 @@
         Temple Construction
     </h1>
     <img id="temple" src="../temple.webp" alt="" />
-    <div class="flexbox">
-        <div class="flexchild" style="padding-left: 5vw;">
-            <h1 style="width: 80%;">
-                Construction of Sanctum Sanctorum (மூலஸ்தானம்)
-            </h1>
-            <p>
-                The mulasthanam, or the "main sanctum" is the new, permanent
-                home of the main idol: Shanmukar. Currently, progress is being
-                made in the construction of the karpagraham, arthamandapam,
-                mahamandapam, etc. The first stone was inaugurated on Jan 21st,
-                2019 commencing the construction of the mulasthanam. Thus, the
-                base is fully prepared for complete construction of the
-                mulasthanam with granite stones.
-            </p>
-        </div>
-        <div class="flexchild" id="galleria-wrapper">
-            <div
-                class="flexchild"
-                id="galleria"
-                style="padding-top: 7vh; margin-right: 2vw;"
-            >
-                <div
-                    class="embla"
-                    use:emblaCarouselSvelte={{ options, plugins: [plugins[0]] }}
-                >
-                    <div class="embla__container">
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p1.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p3.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p4.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p5.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p7.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p8.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p9.webp"
-                                alt="about us"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flexbox">
-        <div class="flexchild video-wrapper">
-                {#each videos as {idx,link}
-                    (idx)
-                }
-                    {#if vidShowIndex === idx}
-                        <div class="video-container" style="z-index: 20" transition:fade>
-                            <video
-                                controls
-                                autoplay
-                                playsinline
-                            >
-                                <source src={link} type="video/mp4" />
-                            </video>
-                        </div>
-                    {/if}
-                {/each}
-                <a class="prev" on:click={prevSlide}>&#10094;</a>
-                <a class="next" on:click={nextSlide}>&#10095;</a>
-        </div>
-    </div>
-    <div class="flexbox" id="invert">
-        <div
-            class="flexchild"
-            id="galleria-wrapper"
-            style="padding-left: 2vw; "
-        >
-            <div
-                class="flexchild"
-                id="galleria"
-                style="padding-top: 7vh; margin-right: 2vw;"
-            >
-                <div
-                    class="embla"
-                    use:emblaCarouselSvelte={{ options, plugins: [plugins[2]] }}
-                >
-                    <div class="embla__container">
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p10.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p11.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p12.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p13.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p14.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p15.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\p16.webp"
-                                alt="about us"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="flexchild" style="padding-left: 5vw;">
-            <h1 style="width: 80%;">West Side of Temple</h1>
-            <p>
-                The west side of the temple is where the preparations of
-                stonework for the temple occurs. This includes carving,
-                designing, and the intricate shaping of decorative granite
-                pieces. Through the guidance from the "sthapathi" (architects),
-                led by Mr. V. Karthik, the temple is being constructed in a
-                manner that honours the "shilpa shastra", a timeless detailing
-                of Hindu temple construction.
-            </p>
-        </div>
-    </div>
-    <div class="flexbox">
-        <div class="flexchild" style="padding-left: 5vw;">
-            <h1 style="width: 80%;">Temple Vision</h1>
-            <p>
-                The grand temple is a large undertaking to build a permanent
-                home for Shankmukar that stands the test of time. Currently, our
-                focus lies on the mulasthanam, but our ultimate goal is to
-                complete similar grand constructions for the parivara murthis.
-                The mandapams will be completed, followed by the rajagopuram.
-            </p>
-        </div>
-        <div class="flexchild" id="galleria-wrapper">
-            <div
-                class="flexchild"
-                id="galleria"
-                style="padding-top: 7vh; margin-right: 2vw;"
-            >
-                <div
-                    class="embla"
-                    use:emblaCarouselSvelte={{ options, plugins: [plugins[2]] }}
-                >
-                    <div class="embla__container">
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\e1.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\e2.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\e3.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\e4.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\i1.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\i2.webp"
-                                alt="about us"
-                            />
-                        </div>
-                        <div class="embla__slide">
-                            <img
-                                style="width: 100%; height: 100%"
-                                src="\i3.webp"
-                                alt="about us"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {#each sections as section, i}
+        <CarouselSection {...section} invert={i % 2 === 1} />
+    {/each}
     <Footer></Footer>
 </body>
 
 <MediaQuery query="(max-width: 1280px)" let:matches>
     {#if matches}
         <style>
-            .flexbox {
-                display: block !important;
-            }
-            .flexchild {
-                padding: 0 !important;
-                margin: 0 !important;
-                align-items: center;
-            }
-            .video-wrapper.flexchild {
-                width: 100vw;
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-                margin: 5vh 0 !important;
-                max-width: 100%;
-                height: auto;
-            }
-            #invert {
-                display: flex !important;
-                flex-direction: column-reverse !important;
-            }
-            .flexchild h1 {
-                text-align: center;
-                margin-left: -6vw !important;
-                font-size: 5vh !important;
-                width: 100% !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                padding-top: 3vh !important;
-            }
-            .flexchild p {
-                text-align: center;
-                width: 90% !important;
-                padding: 0 !important;
-                margin-top: 1vh !important;
-                padding-bottom: 3vh !important;
-            }
             h1 {
                 font-size: 7vh !important;
             }
@@ -419,105 +232,9 @@
     #temple {
         margin-top: 1vh;
     }
-    .flexbox {
-        padding: 0;
-        margin: 0;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-    }
-    .flexchild {
-        padding: 0;
-        margin: 0;
-        flex: 1 1 0px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    p {
-        padding: 0;
-        margin: 0;
-        padding-left: 1vw;
-        font-size: 2vh;
-        padding-top: 1vh;
-        line-height: 3vh;
-        width: 60%;
-        padding-bottom: 3vh;
-    }
     img {
         box-sizing: border-box;
         width: 100%;
-    }
-    .embla {
-        overflow: hidden;
-    }
-    .embla__container {
-        display: flex;
-        grid-auto-flow: column;
-        grid-auto-columns: 40%;
-    }
-    .embla__slide {
-        flex: 0 0 100%;
-        min-width: 0;
-        height: 60vh;
-        transition-timing-function: linear;
-    }
-    .embla__slide img {
-        object-fit: cover;
-    }
-    .video-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 65%;
-        height: 60vh;
-        padding-top: 0;
-        margin: 5vh auto;
-        margin-bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-    video {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-    }
-    .video-container {
-        position: absolute;
-        background: black;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        transform: translateY(-50%);
-        z-index:20;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-    }
-    .prev {
-        left: 0.2rem;
-    }
-    .next {
-        right: 0.2rem;
-    }
-    .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
     }
     #phone {
         display: none;
