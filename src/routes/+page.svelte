@@ -1,6 +1,7 @@
 <!-- IMPROVE ALL MARQUEES! -->
 
 <script>
+    import { onMount } from "svelte";
     import { Marquee } from "@selemondev/svelte-marquee";
     import "@selemondev/svelte-marquee/dist/style.css";
     import Navbar from "./template/nav.svelte";
@@ -121,7 +122,28 @@
         "பா.கீர்த்தனா Rs.500"
     ];
 
+    // Scroll indicators for the Temple Construction card: the top/bottom red
+    // fades grow in as there is more to scroll in that direction and fade to
+    // nothing once you reach the respective end.
+    let constructionEl;
+    let topFade = 0;
+    let bottomFade = 0;
 
+    const FADE_RANGE = 40; // px of scroll over which a fade reaches full strength
+
+    const updateScrollFades = () => {
+        if (!constructionEl) return;
+        const { scrollTop, scrollHeight, clientHeight } = constructionEl;
+        const remaining = scrollHeight - clientHeight - scrollTop;
+        topFade = Math.min(scrollTop / FADE_RANGE, 1);
+        bottomFade = Math.min(remaining / FADE_RANGE, 1);
+    };
+
+    onMount(() => {
+        updateScrollFades();
+        window.addEventListener("resize", updateScrollFades);
+        return () => window.removeEventListener("resize", updateScrollFades);
+    });
 </script>
 
 <svelte:head>
@@ -150,27 +172,67 @@
     </h1>
 
     <section id="posts">
-        <section id="construction">
-            <h2>Temple Construction</h2>
-            <p style="font-size: 1vw; padding-right: 2%;">
-                The Kandavanam Temple is the home of Arumuga Swamy. For over 100
-                years, temple caretakers have aspired to build a granite
-                long-lasting, permanent temple for Arumuga Swamy. As of today,
-                the Mulasthanam is under construction. You can participate in
-                the construction of this temple - a once in a lifetime
-                opportunity.
-            </p>
-        </section>
+        <div id="construction-wrap">
+            <div
+                class="scroll-fade scroll-fade-top"
+                aria-hidden="true"
+                style="opacity: {topFade}"
+            ></div>
+            <section
+                id="construction"
+                bind:this={constructionEl}
+                on:scroll={updateScrollFades}
+            >
+                <h2>Temple Construction</h2>
+                <p>
+                    The Kandavanam Temple is the home of Arumuga Swamy. For over
+                    100 years, temple caretakers have aspired to build a granite
+                    long-lasting, permanent temple for Arumuga Swamy. As of
+                    today, the Mulasthanam is under construction. You can
+                    participate in the construction of this temple - a once in a
+                    lifetime opportunity.
+                </p>
+                <p class="contact-heading">Contact for Donation</p>
+                <p>WhatsApp: +94 77-500-2162</p>
+                <p>Mobile: +1 647-880-1416</p>
+                <p class="contact-heading">Karunkattiruppani Bank Transfer</p>
+                <p>Hatton National Bank (HNB), Nelliady, Sri Lanka</p>
+                <p>Account Number: 118020318297</p>
+                <p>
+                    Account Holders: K. Naveenthiran, T. Kannathasan,
+                    N. Baskarasothy
+                </p>
+                <p class="contact-heading">Karunkattiruppani Committee Contacts</p>
+                <p>Phone: +94 21 226 6664</p>
+                <p>Chairman: +94 77 500 2162</p>
+                <p>Secretary: +94 77 222 9354</p>
+                <p>Treasurer: +94 77 361 4377</p>
+                <p class="contact-heading">Overseas Representatives</p>
+                <p>Switzerland &mdash; S. Vinayagalingam: +41 76 427 15 79</p>
+                <p>London &mdash; S. Mayooran: +44 7490 187108</p>
+                <p>France &mdash; M. Sreeskantharaja: +33 6 15 61 27 67</p>
+            </section>
+            <div
+                class="scroll-fade scroll-fade-bottom"
+                aria-hidden="true"
+                style="opacity: {bottomFade}"
+            ></div>
+        </div>
         <section id="donors">
             <h2 style="padding-bottom: 1vh;">Donors</h2>
             <div style="padding-left: 1vw;">
-                <Marquee direction="up" fade={false} duration={600}>
+                <Marquee direction="up" fade={false} duration={1200}>
                     {#each donors as donor}
                         <div style="font-size: 2vh;">{donor}</div>
                     {/each}
                 </Marquee>
             </div>
         </section>
+    </section>
+
+    <!-- Events + Daily Pujas cards removed from the landing page for now.
+         Commented out so they can be restored in the future.
+    <section id="schedule">
         <section id="events">
             <h2>Events</h2>
             <div style="padding-left: 1vw;">
@@ -202,6 +264,7 @@
             </div>
         </section>
     </section>
+    -->
 </body>
 
 <style>
@@ -237,7 +300,7 @@
     #bigtitle {
         z-index: 1;
         position: relative; 
-        bottom: 15vw; 
+        bottom: 11vw; 
         padding-left: 3vw; 
         padding-top: 4vh;
         padding-bottom: 30vh;
@@ -352,41 +415,156 @@
 
     #posts {
         z-index: 1;
-        height: 92%;
+        box-sizing: border-box;
         width: 30%;
         position: absolute;
         margin: 0;
-        padding: 0;
-        top: 100%;
+        top: 7%;
+        bottom: 2%;
         left: 65%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        flex-wrap: nowrap;
         flex: none;
-        animation: topanim 2s 1s forwards;
-        padding-top: 2vh; 
-        margin-top: 2vh; 
+        gap: 2%;
+        padding-top: 2vh;
+    }
+
+    /* Events + Daily Pujas (#schedule) removed for now; kept for future use.
+    #schedule {
+        z-index: 2;
+        position: absolute;
+        top: 48%;
+        left: 3vw;
+        width: 58%;
+        height: 44%;
+        display: flex;
+        flex-direction: row;
+        gap: 2%;
+        margin: 0;
+        padding: 0;
+        animation: schedanim 2s 1s forwards;
+    }
+
+    @keyframes schedanim {
+        0% {
+            opacity: 0;
+            transform: translateY(4vh);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #schedule > section {
+        flex: 1 1 0;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    #schedule #events {
+        width: auto;
+        height: 100%;
+        margin: 0;
+        background-color: #722620;
+        color: #ffd08e;
+        border: solid #722620 5px;
+    }
+
+    #schedule #dpujas {
+        width: auto;
+        height: 100%;
+        margin: 0;
+        background-color: #ffd08e;
+        color: #722620;
+        border: solid #ffd08e 5px;
+    }
+    */
+
+    /* Wrapper owns the column sizing + positioning so the scroll-cue gradient
+       can stay pinned to the bottom while the inner card scrolls */
+    #construction-wrap {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        flex: 1 1 auto;
+        min-height: 0;
+        border-radius: 20px;
     }
 
     #construction {
+        box-sizing: border-box;
         width: 100%;
+        height: 100%;
         background-color: #ffd08e;
         color: #722620;
-        padding: 0;
-        margin-bottom: 4%;
+        padding: 0 0 1vh 0;
+        margin: 0;
         border: solid #ffd08e 5px;
         border-radius: 20px;
+        /* Scroll internally if the contact details overflow, so the page
+           never grows past one screen */
+        overflow-y: auto;
+    }
+
+    /* Red tint scroll indicators: top fade grows as you scroll down, bottom
+       fade shrinks as you reach the end. Opacity is driven inline by JS. */
+    #construction-wrap .scroll-fade {
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        height: 7vh;
+        pointer-events: none;
+        z-index: 2;
+        transition: opacity 0.2s ease;
+    }
+
+    #construction-wrap .scroll-fade-top {
+        top: 5px;
+        border-radius: 15px 15px 0 0;
+        background: linear-gradient(
+            to top,
+            rgba(87, 1, 0, 0) 0,
+            rgba(87, 1, 0, 0.55) 100%
+        );
+    }
+
+    #construction-wrap .scroll-fade-bottom {
+        bottom: 5px;
+        border-radius: 0 0 15px 15px;
+        background: linear-gradient(
+            to bottom,
+            rgba(87, 1, 0, 0) 0,
+            rgba(87, 1, 0, 0.55) 100%
+        );
     }
 
     #construction h2 {
         font-family: "Noto Serif", serif;
-        font-size: 2vw;
+        font-size: 1.6vw;
         margin: 0;
-        padding-left: 4%;
+        padding: 0.4vh 4% 0.2vh;
     }
 
+    /* One consistent text size for every line in the construction card */
     #construction p {
-        font-size: 0.75vw;
-        padding-left: 4%;
+        font-size: 0.9vw;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0 2% 0 4%;
+    }
+
+    #construction .contact-heading {
+        font-family: "Noto Serif", serif;
+        font-size: 1.15vw;
+        font-weight: 700;
+        margin-top: 1.1vh;
+        margin-bottom: 0.2vh;
     }
 
     #events {
@@ -476,30 +654,29 @@
         border-radius: 20px;
         height: 35%; */
 
+        box-sizing: border-box;
         width: 100%;
         background-color: #722620;
         color: #ffd08e;
-        /* background-color: #FFD08E;  
-  color: #722620; */
         padding: 0;
-        margin-right: 2%;
+        margin: 0;
         border: solid #722620 5px;
-        /* border: solid #FFD08E 5px; */
         border-radius: 20px;
         overflow: hidden;
         position: relative;
-        height: 29%;
+        /* Takes a steady share at the bottom of the column */
+        flex: 0 0 30%;
     }
 
     #donors h2 {
         font-family: "Noto Serif", serif;
-        font-size: 2vw;
+        font-size: 1.6vw;
         margin: 0;
-        padding-left: 4%;
+        padding: 0.4vh 4% 0.2vh;
     }
 
     #donors p {
-        font-size: 0.75vw;
+        font-size: 0.85vw;
         padding-left: 4%;
     }
 
@@ -583,13 +760,43 @@
                 position: relative !important;
                 left: 0 !important; 
                 top: 0 !important; 
+                bottom: auto !important;
+                height: auto !important;
                 display: flex !important;
-                flex-direction: row !important;
+                flex-direction: column !important;
+                flex-wrap: nowrap !important;
+                gap: 2vh !important;
                 width: 100vw !important; 
                 margin-top: -5vh !important; 
             }
+            /* On mobile the cards stack and size to their content, not the
+               desktop flex/overflow sizing that made them huge */
+            #construction-wrap {
+                flex: 0 0 auto !important;
+                width: 94vw !important;
+                margin: 0 3vw !important;
+                min-height: 0 !important;
+            }
+            #construction {
+                height: auto !important;
+                width: 100% !important;
+                overflow: visible !important;
+            }
+            /* No internal scroll on mobile, so hide the scroll-cue gradient */
+            #construction-wrap .scroll-fade {
+                display: none !important;
+            }
+            #donors {
+                flex: 0 0 auto !important;
+                width: 94vw !important;
+                height: 40vh !important;
+                margin: 0 3vw !important;
+            }
             #construction p { 
                 font-size: 2vh !important; 
+            }
+            #construction .contact-heading { 
+                font-size: 2.4vh !important; 
             }
             h1 { 
                 font-size: 5vh !important; 
@@ -597,20 +804,8 @@
             h2 { 
                 font-size: 4vh !important; 
             }
-            #donors { 
-                margin-right: 0 !important; 
-                margin-bottom: 2vh; 
-                padding-left: 1.5vw !important; 
-            }
             #donors h2 { 
-                padding: 0 !important; 
-            }
-            #dpujas { 
-                margin-right: -2% !important; 
-                right: 0; 
-            }
-            #events { 
-                margin-right: 6% !important; 
+                padding: 0 0 1vh 1.5vw !important; 
             }
             #phone { 
                 display: flex !important; 
