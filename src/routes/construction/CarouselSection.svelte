@@ -110,11 +110,16 @@
                                     controls
                                     muted
                                     playsinline
-                                    preload="metadata"
+                                    preload="none"
                                     on:ended={() => handleVideoEnded(i)}
                                 ></video>
                             {:else}
-                                <img src={item.src} alt={title} />
+                                <img
+                                    src={item.src}
+                                    alt={title}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                             {/if}
                         </div>
                     {/each}

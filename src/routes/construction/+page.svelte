@@ -9,6 +9,57 @@
     // automatically alternate based on position, so just add an entry here.
     const sections = [
         {
+            title: "Mulasthanam Update (மூலஸ்தானம்)",
+            description:
+                "Work on the mulasthanam has moved into its next phase. With " +
+                "the granite base complete, scaffolding is now being raised " +
+                "around the sanctum so the walls can rise course by course. " +
+                "Much of this work is carried through the devotion of the " +
+                "community: temple volunteers come together to lift and fix " +
+                "the scaffolding frame, readying the mulasthanam for the next " +
+                "stage of granite construction.",
+            slides: [
+                "/videos/vid20.webm",
+                "/s1.webp",
+                "/s2.webp",
+                "/s3.webp",
+                "/s4.webp",
+                "/s5.webp",
+                "/s6.webp",
+                "/s7.webp",
+            ],
+        },
+        {
+            title: "Ganapathi Sanathi (விநாயகர் சந்நிதி)",
+            description:
+                "Work has begun on the next level of the Ganapathi Sanathi, " +
+                "the shrine for Lord Vinayagar. The sthapathis first carved and " +
+                "dressed the granite blocks that will form the rising courses " +
+                "of the sanctum, shaping each piece in keeping with the shilpa " +
+                "shastra. With the stonework prepared, a puja was held to " +
+                "commence the next stage of construction, invoking blessings as " +
+                "the granite is raised into place. Each stage brings the shrine " +
+                "closer to becoming a permanent granite home for Vinayagar.",
+            slides: [
+                "/videos/vid15.webm",
+                "/videos/vid16.webm",
+                "/videos/vid17.webm",
+                "/videos/vid18.webm",
+                "/videos/vid19.webm",
+                "/g1.webp",
+                "/g2.webp",
+                "/g3.webp",
+                "/g4.webp",
+                "/g5.webp",
+                "/g6.webp",
+                "/g7.webp",
+                "/g8.webp",
+                "/g9.webp",
+                "/g10.webp",
+                "/g11.webp",
+            ],
+        },
+        {
             title: "The Temple Construction Committee",
             description:
                 "In order to support the construction of our new temple, the " +
